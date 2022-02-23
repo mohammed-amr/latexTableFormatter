@@ -4,50 +4,50 @@ import sys
 import tableFormatter as tF
 
 ####### Dummy data ########
-storedResults = {}
-storedResults["our_method_the_best"] = {}
-storedResults["our_method_the_best"]["TP"] = 1337
-storedResults["our_method_the_best"]["FP"] = 42
-storedResults["our_method_the_best"]["TS"] = 13
-storedResults["our_method_the_best"]["MT"] = 400
-storedResults["our_method_the_best"]["averageDistance"] = 32.5
+stored_results = {}
+stored_results["our_method_the_best"] = {}
+stored_results["our_method_the_best"]["TP"] = 1337
+stored_results["our_method_the_best"]["FP"] = 42
+stored_results["our_method_the_best"]["TS"] = 13
+stored_results["our_method_the_best"]["MT"] = 400
+stored_results["our_method_the_best"]["averageDistance"] = 32.5
 
 
-storedResults["the_method_we_hate"] = {}
-storedResults["the_method_we_hate"]["TP"] = 1336
-storedResults["the_method_we_hate"]["FP"] = 43
-storedResults["the_method_we_hate"]["TS"] = 12
-storedResults["the_method_we_hate"]["MT"] = 800
-storedResults["the_method_we_hate"]["averageDistance"] = 77
+stored_results["the_method_we_hate"] = {}
+stored_results["the_method_we_hate"]["TP"] = 1336
+stored_results["the_method_we_hate"]["FP"] = 43
+stored_results["the_method_we_hate"]["TS"] = 12
+stored_results["the_method_we_hate"]["MT"] = 800
+stored_results["the_method_we_hate"]["averageDistance"] = 77
 
 
-storedResults["scape_goat"] = {}
-storedResults["scape_goat"]["TP"] = 300
-storedResults["scape_goat"]["FP"] = 3000
-storedResults["scape_goat"]["TS"] = 34
-storedResults["scape_goat"]["MT"] = 5500
-storedResults["scape_goat"]["averageDistance"] = 1000
+stored_results["scape_goat"] = {}
+stored_results["scape_goat"]["TP"] = 300
+stored_results["scape_goat"]["FP"] = 3000
+stored_results["scape_goat"]["TS"] = 34
+stored_results["scape_goat"]["MT"] = 5500
+stored_results["scape_goat"]["averageDistance"] = 1000
 
-storedResults["the_OG"] = {}
-storedResults["the_OG"]["TP"] = 1000
-storedResults["the_OG"]["FP"] = 60
-storedResults["the_OG"]["TS"] = 50
-storedResults["the_OG"]["MT"] = 1000
-storedResults["the_OG"]["averageDistance"] = 100
+stored_results["the_OG"] = {}
+stored_results["the_OG"]["TP"] = 1000
+stored_results["the_OG"]["FP"] = 60
+stored_results["the_OG"]["TS"] = 50
+stored_results["the_OG"]["MT"] = 1000
+stored_results["the_OG"]["averageDistance"] = 100
 
-storedResults["the_OG"] = {}
-storedResults["the_OG"]["TP"] = 1005
-storedResults["the_OG"]["FP"] = 70
-storedResults["the_OG"]["TS"] = 36
-storedResults["the_OG"]["MT"] = 1200
-storedResults["the_OG"]["averageDistance"] = 70
+stored_results["the_OG"] = {}
+stored_results["the_OG"]["TP"] = 1005
+stored_results["the_OG"]["FP"] = 70
+stored_results["the_OG"]["TS"] = 36
+stored_results["the_OG"]["MT"] = 1200
+stored_results["the_OG"]["averageDistance"] = 70
 
-storedResults["here_for_show"] = {}
-storedResults["here_for_show"]["TP"] = 1010
-storedResults["here_for_show"]["FP"] = 250
-storedResults["here_for_show"]["TS"] = 300
-storedResults["here_for_show"]["MT"] = 1500
-storedResults["here_for_show"]["averageDistance"] = 60
+stored_results["here_for_show"] = {}
+stored_results["here_for_show"]["TP"] = 1010
+stored_results["here_for_show"]["FP"] = 250
+stored_results["here_for_show"]["TS"] = 300
+stored_results["here_for_show"]["MT"] = 1500
+stored_results["here_for_show"]["averageDistance"] = 60
 ####### Dummy data ########
 
 

@@ -53,41 +53,39 @@ storedResults["here_for_show"]["averageDistance"] = 60
 
 if __name__ == '__main__':
     
+    method_names = {"our_method_the_best": "Our Method", "the_method_we_hate": "Second Best Method", "scape_goat": "All we have is Hope", "the_OG": "CNN v1.0", "here_for_show":"Old SOTA"}
 
-    methodNames = ["our_method_the_best", "the_method_we_hate", "scape_goat", "the_OG", "here_for_show"]
-    methodPrettyNames = ["Our Method", "Second Best Method", "All we have is Hope", "CNN v1.0", "Old SOTA"]
-
-    bestsFormatter = tF.BestsFormatter(["TP", "FP", "TS", "MT", "averageDistance"], compOrder = [True, False, False, False, False])
+    bests_formatter = BestsFormatter(["TP", "FP", "TS", "MT", "averageDistance"], comp_order = [True, False, False, False, False])
     
     # loop once through method results to get best indices.
-    for methodNameIndex, methodName in enumerate(methodNames):
+    for method_name in list(method_names.keys()):
 
-        methodResults = storedResults[methodName]
+        method_results = stored_results[method_name]
 
-        bestsFormatter.updateBests("TP", methodResults["TP"], methodName)
-        bestsFormatter.updateBests("FP", methodResults["FP"], methodName)
-        bestsFormatter.updateBests("TS", methodResults["TS"], methodName)
-        bestsFormatter.updateBests("MT", methodResults["MT"], methodName)
-        bestsFormatter.updateBests("averageDistance", methodResults["averageDistance"], methodName)
+        bests_formatter.update_ordering("TP", method_results["TP"], method_name)
+        bests_formatter.update_ordering("FP", method_results["FP"], method_name)
+        bests_formatter.update_ordering("TS", method_results["TS"], method_name)
+        bests_formatter.update_ordering("MT", method_results["MT"], method_name)
+        bests_formatter.update_ordering("averageDistance", method_results["averageDistance"], method_name)
 
 
     # loop to build table string. 
-    overallString = ""
-    for methodNameIndex, methodName in enumerate(methodNames):
-        lineString = methodPrettyNames[methodNameIndex]
+    overall_string = ""
+    for method_name in list(method_names.keys()):
+        line_string = method_names[method_name]
 
         actorIndex = 0
-        results = storedResults[methodName]
+        results = stored_results[method_name]
 
-        TPString = bestsFormatter.getString("%.3f" % results["TP"], "TP", methodName)
-        FPString = bestsFormatter.getString("%.3f" % results["FP"], "FP", methodName)
-        MTString = bestsFormatter.getString("%.3f" % results["MT"], "MT", methodName)
-        TSString = bestsFormatter.getString("%.3f" % results["TS"], "TS", methodName)
-        averageDistanceString = bestsFormatter.getString("%.1f" % (results["averageDistance"]), "averageDistance", methodName)
+        TP_string = bests_formatter.get_string("%.3f" % results["TP"], "TP", method_name)
+        FP_string = bests_formatter.get_string("%.3f" % results["FP"], "FP", method_name)
+        MT_string = bests_formatter.get_string("%.3f" % results["MT"], "MT", method_name)
+        TS_string = bests_formatter.get_string("%.3f" % results["TS"], "TS", method_name)
+        avg_distance_string = bests_formatter.get_string("%.1f" % (results["averageDistance"]), "averageDistance", method_name)
 
 
-        lineString += " & " + TPString + " & " + MTString + " & " + FPString+ " & " + TSString + " & " + averageDistanceString
+        line_string += " & " + TP_string + " & " + MT_string + " & " + FP_string+ " & " + TS_string + " & " + avg_distance_string
 
-        overallString += lineString + " \\\\" + "\n" + "\\hline" + "\n" 
+        overall_string += line_string + " \\\\" + "\n" + "\\hline" + "\n" 
 
-    print(overallString)
+    print(overall_string)
